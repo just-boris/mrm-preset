@@ -1,5 +1,5 @@
 {
-  "name": "@just-boris/mrm-preset",
+  "name": "@vars/mrm-preset",
   "version": "0.0.1",
   "description": "Common tasks for Mrm",
   "license": "MIT",
