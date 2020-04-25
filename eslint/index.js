@@ -35,6 +35,7 @@ function task() {
     },
     plugins: ["unicorn"],
     rules: {
+      "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/interface-name-prefix": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
@@ -51,12 +52,18 @@ function task() {
   if (pkg.get("dependencies.react") || pkg.get("devDependencies.react")) {
     packages.push("eslint-plugin-react", "eslint-plugin-react-hooks");
     eslintrc.merge({
+      presets: ["plugin:react/recommended"],
       plugins: ["react-hooks", "react"],
       rules: {
         "react/display-name": "off",
         "react/prop-types": "off",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
+      },
+      settings: {
+        react: {
+          version: "detect",
+        },
       },
       parserOptions: {
         ecmaFeatures: {
