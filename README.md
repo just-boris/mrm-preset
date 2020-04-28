@@ -10,5 +10,5 @@ Includes plugins for typescript, prettier and pre-commit hook.
 If it finds React in dependencies, also adds plugins for React
 
 ```
-npx mrm eslint --preset @just-boris/mrm-preset
+npx mrm eslint --preset @vars/mrm-preset
 ```
